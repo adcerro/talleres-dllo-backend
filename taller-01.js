@@ -1,4 +1,9 @@
 // Punto 1
+/**
+ * Convierte la temperatura de grados centígrados a farenheit.
+ * @param {number} cent Temperatura en grados centígrados.
+ * @returns {number} Temperatura en grados farenheit.
+ */
 function convertidorTemp(cent){
 	return cent*(9/5)+32;
 }
