@@ -35,3 +35,34 @@ function resolvedor(a, b, c, resuma = true) {
 function mejorParidad(num) {
   return !(num % 2);
 }
+// Punto 4
+/**
+ * Evalua si el numero es par o impar.
+ * @param {number} num Numero a evaluar.
+ * @returns {boolean} true si el numero es par, de lo contrario false.
+ */
+function peorParidad(num) {
+  if (num == 0) {
+    return true;
+  } else if (num == 1) {
+    return false;
+  } else if (num == 2) {
+    return true;
+  } else if (num == 3) {
+    return false;
+  } else if (num == 4) {
+    return true;
+  } else if (num == 5) {
+    return false;
+  } else if (num == 6) {
+    return true;
+  } else if (num == 7) {
+    return false;
+  } else if (num == 8) {
+    return true;
+  } else if (num == 9) {
+    return false;
+  } else if (num == 10) {
+    return true;
+  }
+}
