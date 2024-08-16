@@ -31,3 +31,36 @@ function exponentiation(base,power) {
     }
     return result;
 }
+/**
+ * 
+ * @param {*} object 
+ * @param {Array} list 
+ * @returns {number}
+ */
+function instancesinlist(object,list){
+    let amount = 0;
+    for(index in list){
+        if(list[index]===object){
+            amount++;
+        }
+    }
+    return amount;
+}
+/**
+ * 
+ * @param {number} n 
+ * @returns {number}
+ */
+function fibonacci(n){
+    if(n==0){
+        return 0;
+    }
+    if(n==1){
+        return 1;
+    }
+    arr = [0,1]
+    for (let index = 1; index < n; index++) {
+        arr.push(arr[index]+arr[index-1]);
+    }
+    return arr[arr.length-1];
+}
