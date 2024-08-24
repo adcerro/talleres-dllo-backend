@@ -15,3 +15,17 @@ function findMax(list){
     }
     return max;
 }
+/**
+ * Punto 2.
+ * @param {Object} list A list of numbers.
+ * @param {Number} number The number you are looking for.
+ * @returns {Boolean} Returns True if the number is in the list.
+ */
+function includes(list,number){
+    for(index in list){
+        if(list[index]===number){
+            return true;
+        }
+    }
+    return false;
+}
