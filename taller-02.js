@@ -55,7 +55,22 @@ function sum(list){
     return list.reduce((a,b)=>a+b,0);
 }
 
-
+/**
+ * Punto 4.
+ * Get a list of numbers in between the highest and lowest
+ * numbers of the list without including the numbers that are
+ * already on the list.
+ * @param {Object} list A list of numbers.
+ * @returns {Object} A list of the numbers
+ */
 function missingNumbers(list){
-
+    let min = findMin(list);
+    let max = findMax(list);
+    let numbers = [];
+    for (let index = min+1; index < max; index++) {
+        if(!includes(list,index)){
+            numbers.push(index);
+        }
+    }
+    return numbers;
 }
