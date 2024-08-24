@@ -29,3 +29,11 @@ function includes(list,number){
     }
     return false;
 }
+/**
+ * Punto 3.
+ * @param {Object} list A list of numbers.
+ * @returns {Number} The sum of all the numbers in the list.
+ */
+function sum(list){
+    return list.reduce((a,b)=>a+b,0);
+}
