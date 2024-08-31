@@ -23,3 +23,17 @@ function desglosarString(string,voc="vocales"){
         return string.split("").filter((letra)=>!esVocal(letra)).length;
     }
 }
+function twoSum(lista,numero){
+    if(lista.length < 2){
+        throw new Error("Why?");
+    }
+    let pares = [];
+    for(let baseindex = 0;baseindex<lista.length-1;baseindex++){
+        for (let secondindex = 0; secondindex < lista.length-1; secondindex++) {
+            if(lista[baseindex]+lista[secondindex]===numero){
+                pares.push([baseindex,secondindex]);
+            }
+        }
+    }
+    return pares;
+}
