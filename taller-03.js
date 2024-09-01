@@ -67,16 +67,16 @@ function conversionRomana(numero){
     if(numero.length === 1){
         return romanoAdecimal(numero);
     }
-    let result = 0;
-    for (let currentIndex = 0; currentIndex < numero.length-1; currentIndex++) {
-        let currentNumber = romanoAdecimal(numero[currentIndex]);
-        let nextNumber = romanoAdecimal(numero[currentIndex+1]);
-        if(currentNumber<nextNumber){
-            result-= currentNumber;
+    let resultado = 0;
+    for (let index = 0; index < numero.length-1; index++) {
+        let numeroActual = romanoAdecimal(numero[index]);
+        let siguienteNumero = romanoAdecimal(numero[index+1]);
+        if(numeroActual<siguienteNumero){
+            resultado-= numeroActual;
         }else{
-            result+= currentNumber;
+            resultado+= numeroActual;
         }
     }
-    result = result + romanoAdecimal(numero[numero.length-1]);
-    return result;
+    resultado = resultado + romanoAdecimal(numero[numero.length-1]);
+    return resultado;
 }
