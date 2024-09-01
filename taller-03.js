@@ -37,3 +37,11 @@ function twoSum(lista,numero){
     }
     return pares;
 }
+function esNumeroRomano(texto){
+    return !/[^IVXLCDM]/.test(texto);
+}
+function conversionRomana(numero){
+    if(!esNumeroRomano(numero)){
+        throw new Error("No es número romano");
+    }
+}
