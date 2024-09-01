@@ -35,7 +35,7 @@ function twoSum(lista,numero){
     }
     let pares = [];
     for(let baseindex = 0;baseindex<lista.length-1;baseindex++){
-        for (let secondindex = 0; secondindex < lista.length; secondindex++) {
+        for (let secondindex = baseindex+1; secondindex < lista.length; secondindex++) {
             if(lista[baseindex]+lista[secondindex]===numero){
                 pares.push([baseindex,secondindex]);
             }
