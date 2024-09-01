@@ -1,5 +1,5 @@
 /**
- * 
+ * Evalua si una letra es una vocal.
  * @param {String} letra Una letra.
  * @returns {Boolean} True si es vocal.
  */
