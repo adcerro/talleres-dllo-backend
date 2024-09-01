@@ -31,7 +31,7 @@ function desglosarString(string,voc="vocales"){
  */
 function twoSum(lista,numero){
     if(lista.length < 2){
-        throw new Error("Why?");
+        throw new Error("Tamaño de lista insuficiente.");
     }
     let pares = [];
     for(let baseindex = 0;baseindex<lista.length-1;baseindex++){
