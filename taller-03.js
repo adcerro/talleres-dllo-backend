@@ -37,9 +37,23 @@ function twoSum(lista,numero){
     }
     return pares;
 }
+/**
+ * Checkeo case-sensitive de si un string es un número
+ * romano válido (solo contiene los caracteres permitidos).
+ * @param {String} texto La cadena que representa el número.
+ * @returns {Boolean} True si solo hay caracteres de los números romanos.
+ */
 function esNumeroRomano(texto){
     return !/[^IVXLCDM]/.test(texto);
 }
+/**
+ * Conversor de caracter (número romano) a número arábigo.
+ * 
+ * En caso de recibir más de un caracter o algo inválido
+ * retorna 0.
+ * @param {String} numero El caracter (número romano válido).
+ * @returns {Number} El número arábigo
+ */
 function romanoAdecimal(numero){
     switch (numero) {
         case "I":
@@ -60,6 +74,11 @@ function romanoAdecimal(numero){
             return 0;
     }
 }
+/**
+ * Punto 3
+ * @param {String} numero Un número romano.
+ * @returns {Number} El equivalente en cifras arábigas.
+ */
 function conversionRomana(numero){
     if(!esNumeroRomano(numero)){
         throw new Error("No es número romano");
