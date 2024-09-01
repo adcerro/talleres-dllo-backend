@@ -23,6 +23,12 @@ function desglosarString(string,voc="vocales"){
         return string.split("").filter((letra)=>!esVocal(letra)).length;
     }
 }
+/**
+ * Punto 2.
+ * @param {Object} lista Una lista con números.
+ * @param {Number} numero Un número.
+ * @returns {Object} Una lista de pares de indices.
+ */
 function twoSum(lista,numero){
     if(lista.length < 2){
         throw new Error("Why?");
