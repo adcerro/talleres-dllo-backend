@@ -64,4 +64,19 @@ function conversionRomana(numero){
     if(!esNumeroRomano(numero)){
         throw new Error("No es número romano");
     }
+    if(numero.length === 1){
+        return romanoAdecimal(numero);
+    }
+    let result = 0;
+    for (let currentIndex = 0; currentIndex < numero.length-1; currentIndex++) {
+        let currentNumber = romanoAdecimal(numero[currentIndex]);
+        let nextNumber = romanoAdecimal(numero[currentIndex+1]);
+        if(currentNumber<nextNumber){
+            result-= currentNumber;
+        }else{
+            result+= currentNumber;
+        }
+    }
+    result = result + romanoAdecimal(numero[numero.length-1]);
+    return result;
 }
