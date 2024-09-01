@@ -77,6 +77,6 @@ function conversionRomana(numero){
             resultado+= numeroActual;
         }
     }
-    resultado = resultado + romanoAdecimal(numero[numero.length-1]);
+    resultado += romanoAdecimal(numero[numero.length-1]);
     return resultado;
 }
