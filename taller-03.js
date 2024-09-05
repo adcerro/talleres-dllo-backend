@@ -27,21 +27,20 @@ function desglosarString(string,voc="vocales"){
  * Punto 2.
  * @param {Object} lista Una lista con números.
  * @param {Number} numero Un número.
- * @returns {Object} Una lista de pares de indices.
+ * @returns {Object} Una lista con un par de indices.
  */
 function twoSum(lista,numero){
     if(lista.length < 2){
         throw new Error("Tamaño de lista insuficiente.");
     }
-    let pares = [];
     for(let baseindex = 0;baseindex<lista.length-1;baseindex++){
         for (let secondindex = baseindex+1; secondindex < lista.length; secondindex++) {
             if(lista[baseindex]+lista[secondindex]===numero){
-                pares.push([baseindex,secondindex]);
+                return [baseindex,secondindex];
             }
         }
     }
-    return pares;
+    return [];
 }
 /**
  * Checkeo case-sensitive de si un string es un número
