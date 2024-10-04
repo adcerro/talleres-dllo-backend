@@ -1,3 +1,5 @@
+import { ObjectId } from "mongoose";
+import existsUserAction from "./exists.user.action";
 import readUserAction from "./read.user.action";
 import { UserType } from "./user.model";
 
@@ -7,6 +9,9 @@ async function readUsers(filter:{}={}): Promise<UserType[]> {
 
   return users;
 }
+async function existsUser(id:Number): Promise<Boolean> {
+  return await existsUserAction(id);
+}
 
 // EXPORT CONTROLLER FUNCTIONS
-export { readUsers };
+export { readUsers ,existsUser};
