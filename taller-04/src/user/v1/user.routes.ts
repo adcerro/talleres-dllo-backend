@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { readUsers , existsUser } from "./user.controller";
+import { readUsers , existsUser, addUser} from "./user.controller";
 
 // INIT ROUTES
 const userRoutes = Router();
@@ -27,6 +27,19 @@ async function userExists(request:Request,response:Response){
     exists: exists
   })
 }
+async function addUserT(request:Request,response:Response){
+  addUser({
+    id: request.body.id,
+    name: request.body.name,
+    carrera: request.body.carrera
+  });
+  response.status(200).json({
+    id: request.body.id,
+    name: request.body.name,
+    carrera: request.body.carrera
+  }
+  )
+}
 
 // DECLARE ENDPOINTS
 userRoutes.get("/", GetUsers);
@@ -36,6 +49,8 @@ userRoutes.get("/hobby/:hobby", GetHobbyUsers);
 userRoutes.get("/exists/:id", userExists);
 userRoutes.get("/team-experience/:id", GetHobbyUsers);
 userRoutes.get("/by-faction/:faction", GetHobbyUsers);
+// Punto 5 
+userRoutes.post("/", addUserT);
 
 // EXPORT ROUTES
 export default userRoutes;

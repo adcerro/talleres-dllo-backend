@@ -1,10 +1,12 @@
 import { model, Schema } from "mongoose";
 
 // DECLARE MODEL TYPE
-type UserType = {};
+type UserType = {id:Number,name:String,carrera:String,hobby:String};
 
 // DECLARE MONGOOSE SCHEMA
 const UserSchema = new Schema<UserType>({
+    name:String,
+    carrera:String,
     hobby: String,
 });
 
