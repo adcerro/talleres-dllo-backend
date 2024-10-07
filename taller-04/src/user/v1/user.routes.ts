@@ -53,7 +53,7 @@ async function addUserT(request:Request,response:Response){
   let name = request.body.name;
   let carrera = request.body.carrera;
   if(id==null||name==null||carrera==null){
-    response.status(200).json({
+    response.status(400).json({
       error: "Missing information"
     });
   }else{
