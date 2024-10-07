@@ -26,7 +26,7 @@ async function userExists(request:Request,response:Response){
   const exists = await existsUser(Number(request.query.id?.toString()));
   response.status(200).json({
     exists: exists
-  })
+  });
 }
 
 async function teamExperience(request: Request, response: Response) {
@@ -49,17 +49,23 @@ async function GetFactionUsers(request: Request, response: Response) {
 }
 
 async function addUserT(request:Request,response:Response){
-  addUser({
-    id: request.body.id,
-    name: request.body.name,
-    carrera: request.body.carrera
-  });
-  response.status(200).json({
-    id: request.body.id,
-    name: request.body.name,
-    carrera: request.body.carrera
+  let id = request.body.id;
+  let name = request.body.name;
+  let carrera = request.body.carrera;
+  if(id==null||name==null||carrera==null){
+    response.status(200).json({
+      error: "Missing information"
+    });
+  }else{
+    addUser({id:id,name:name,carrera:carrera});
+    response.status(200).json({
+      status: "added",
+      id: id,
+      name: name,
+      carrera: carrera
+    }
+    );
   }
-  )
 }
 
 // DECLARE ENDPOINTS

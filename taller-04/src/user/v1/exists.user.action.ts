@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 // DECLARE ACTION FUNCTION
 async function existsUserAction(id:Number): Promise<Boolean> {
-  const result = await UserModel.exists({id:id})
+  const result = await UserModel.exists({id:id});
   if(result!==null){
     return true;
   }

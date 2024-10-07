@@ -1,6 +1,8 @@
-let users:Object[] =[]
+import { UserType1 } from "./user.model";
 
-async function addUserAction(user:Object): Promise<Boolean>{
+let users:UserType1[] =[]
+
+async function addUserAction(user:UserType1): Promise<Boolean>{
     let before_length = users.length;
     users.push(user);
     if(users.length == before_length+1){
